@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow</title>
+
+    <style>
+        body {
+            background: #0b0b10;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <p id="status">Carregando StudyFlow...</p>
+
+    <script type="module">
+        import { db } from './js/supabase.js';
+
+        async function iniciar() {
+            try {
+                const { data: { session }, error } = await db.auth.getSession();
+
+                if (error) throw error;
+
+                window.location.replace(
+                    session ? './dashboard.html' : './login.html'
+                );
+
+            } catch (erro) {
+                console.error('Erro ao iniciar:', erro);
+
+                document.getElementById('status').textContent =
+                    'Não foi possível carregar. Verifique sua conexão e tente novamente.';
+            }
+        }
+
+        iniciar();
+    </script>
+</body>
+</html>
