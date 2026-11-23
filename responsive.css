@@ -1,0 +1,7 @@
+#burger{display:none}
+@media(max-width:800px){
+ aside{position:fixed;left:-260px;z-index:20;transition:.25s;width:240px}
+ aside.open{left:0;box-shadow:0 0 0 100vmax #0009}
+ #burger{display:block}main{padding:14px}
+ .filters{grid-template-columns:1fr}.timer{font-size:44px}
+}

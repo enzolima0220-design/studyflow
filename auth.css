@@ -1,0 +1,7 @@
+@import url(style.css);
+body{display:grid;place-items:center;min-height:100vh;padding:16px;background:radial-gradient(circle at 20% 10%,#2a1b5c55,transparent 50%),radial-gradient(circle at 80% 90%,#1b3a7a55,transparent 50%),var(--bg)}
+.auth{width:100%;max-width:420px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:32px;animation:fade .4s}
+.auth .logo{font-size:30px;text-align:center}.auth form{display:grid;gap:12px;margin:16px 0}
+.auth p{text-align:center;margin:6px 0}.msg{padding:10px;border-radius:10px;font-size:14px;display:none}
+.msg.err{display:block;background:#ef444422;color:#fca5a5}.msg.ok{display:block;background:#22c55e22;color:#86efac}
+label.check{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--mut)}

@@ -1,0 +1,48 @@
+:root{--bg:#0b0b10;--card:#14141c;--bd:#26263a;--tx:#e8e8f0;--mut:#8b8ba3;--pu:#8b5cf6;--bl:#3b82f6;--ok:#22c55e;--err:#ef4444;--warn:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+a{color:var(--bl);text-decoration:none}
+.layout{display:flex;min-height:100vh}
+aside{width:240px;background:#0f0f16;border-right:1px solid var(--bd);padding:20px 14px;display:flex;flex-direction:column;gap:10px;position:sticky;top:0;height:100vh}
+.logo{font-weight:800;font-size:22px;background:linear-gradient(90deg,var(--pu),var(--bl));-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 8px 12px}
+nav{display:flex;flex-direction:column;gap:4px;flex:1;overflow:auto}
+nav a{color:var(--mut);padding:10px 12px;border-radius:10px;transition:.2s}
+nav a:hover,nav a.active{background:#1b1b2a;color:#fff}
+nav a.active{box-shadow:inset 3px 0 var(--pu)}
+main{flex:1;padding:24px;min-width:0}
+header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+h1{margin:0;font-size:24px}h2{font-size:17px;margin:0 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;margin-bottom:16px;animation:fade .3s}
+.grid>.card,.grid2>.card{margin:0}
+.card h3{margin:0 0 12px;font-size:14px;color:var(--mut);font-weight:600}
+.big{font-size:30px;font-weight:700}
+.chartbox{position:relative;height:260px}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;align-items:start}
+.form textarea{grid-column:1/-1}
+input,select,textarea{width:100%;background:#0d0d14;color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--pu);border-color:transparent}
+input[type=color]{padding:2px;height:42px}input[type=checkbox]{width:auto}
+.btn{background:linear-gradient(90deg,var(--pu),var(--bl));color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;transition:.2s}
+.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}.btn:disabled{opacity:.5}
+.btn.ghost{background:transparent;border:1px solid var(--bd);color:var(--tx)}
+.btn.danger{background:var(--err)}.btn.sm{padding:5px 10px;font-size:13px}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-bottom:12px}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--bd);flex-wrap:wrap}
+.row:last-child{border:0}.mut{color:var(--mut);font-size:14px}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;font-size:12px;background:#1f1f31;border:1px solid var(--bd)}
+.badge.alta,.badge.blocked,.badge.late{color:var(--err)}.badge.media,.badge.soon{color:var(--warn)}.badge.baixa,.badge.active{color:var(--ok)}
+.bar{background:#1f1f31;border-radius:99px;height:12px;overflow:hidden;margin:6px 0 14px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pu),var(--bl));transition:width .6s}
+.empty{color:var(--mut);text-align:center;padding:24px}
+.timer{font-size:64px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;margin:10px 0}
+.week{display:grid;grid-template-columns:repeat(7,minmax(130px,1fr));gap:10px;overflow-x:auto}
+.day{background:#0d0d14;border:1px solid var(--bd);border-radius:12px;padding:10px;min-height:120px}
+.slot{border-left:3px solid var(--pu);background:#171724;border-radius:8px;padding:6px 8px;margin-top:8px;font-size:13px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--bd);font-size:14px}th{color:var(--mut)}
+.tablewrap{overflow-x:auto}
+.toast{position:fixed;right:20px;bottom:20px;padding:12px 18px;border-radius:10px;background:var(--card);border:1px solid var(--ok);z-index:99;animation:fade .3s}
+.toast.err{border-color:var(--err)}
+.notice{border-left:3px solid var(--pu);background:#171724;padding:10px 14px;border-radius:8px;margin-bottom:10px}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
